@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – Saint-Savin en IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-100 text-stone-800 font-sans min-h-screen flex flex-col">
+  <header class="bg-stone-900 text-white p-6 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-semibold">Saint-Savin en IA</h1>
+      <nav class="space-x-4 text-lg">
+        <a href="index.html" class="hover:underline">Accueil</a>
+        <a href="theorie.html" class="hover:underline">Théorie</a>
+        <a href="outils.html" class="hover:underline">Plateformes</a>
+        <a href="galerie.html" class="hover:underline">Galerie</a>
+        <a href="comparaison.html" class="hover:underline">Analyse</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-6xl mx-auto p-8">
+    <h2 class="text-4xl font-bold mb-6">Galerie des fresques transformées</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded shadow">
+        <img src="assets/images/cartoonify_result.jpg" alt="Cartoonify Résultat" class="mb-2">
+        <p class="text-center text-stone-600">Cartoonify</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="assets/images/toongineer_result.jpg" alt="Toongineer Résultat" class="mb-2">
+        <p class="text-center text-stone-600">Toongineer</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="assets/images/deepart_result.jpg" alt="DeepArt Résultat" class="mb-2">
+        <p class="text-center text-stone-600">DeepArt</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-stone-800 text-white p-6 text-center">
+    © 2025 — Saint-Savin en IA
+  </footer>
+  <script src="js/animations.js"></script>
+</body>
+</html>
