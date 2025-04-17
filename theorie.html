@@ -18,34 +18,71 @@
         <a href="outils.html" class="hover:underline">Plateformes</a>
         <a href="galerie.html" class="hover:underline">Galerie</a>
         <a href="comparaison.html" class="hover:underline">Analyse</a>
-
+        <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="flex-grow max-w-4xl mx-auto p-8">
-    <h2 class="text-4xl font-bold mb-6">Comment fonctionnent les IA de type Cartoonify ?</h2>
-    <section class="mb-8">
-      <h3 class="text-2xl font-semibold mb-2">1. Détection des formes</h3>
-      <p class="text-stone-700">L’IA détecte les contours grâce à des réseaux convolutifs (CNN) pour isoler les éléments clés.</p>
-    </section>
-    <section class="mb-8">
-      <h3 class="text-2xl font-semibold mb-2">2. Simplification des traits</h3>
-      <p class="text-stone-700">L’image est aplatie, les textures réduites, pour un effet stylisé proche du dessin animé.</p>
-    </section>
-    <section class="mb-8">
-      <h3 class="text-2xl font-semibold mb-2">3. Colorisation</h3>
-      <p class="text-stone-700">Des couleurs sont réinterprétées selon un style ou palette artistique propre à l’IA utilisée.</p>
-    </section>
+  <main class="flex-grow max-w-4xl mx-auto p-8 space-y-12 fade-in">
     <section>
-      <h3 class="text-2xl font-semibold mb-2">4. Résultat final</h3>
-      <p class="text-stone-700">Le rendu est stylisé, souvent synthétique, révélant les masses picturales dominantes.</p>
+      <h2 class="text-4xl font-bold mb-4">Comment fonctionnent les IA de type Cartoonify ?</h2>
+      <p class="text-lg text-stone-700">
+        L’effet "cartoonify" désigne la transformation d’une photo réaliste en un rendu stylisé proche d’un dessin animé ou d’une illustration. En IA, plusieurs approches ont été développées pour automatiser cette transformation.
+      </p>
+    </section>
+
+    <!-- Transfert de style -->
+    <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
+      <h3 class="text-2xl font-semibold mb-2">🎨 1. Transfert de style</h3>
+      <img src="assets/images/placeholder-style.jpg" alt="Transfert de style" class="rounded mb-4">
+      <p class="text-stone-700">
+        Le transfert de style conserve le contenu d’une image tout en lui appliquant l’esthétique d’un dessin animé. Il utilise des réseaux comme VGG19 pour fusionner contenu et texture. Précis mais lent, idéal pour les images fixes.
+      </p>
+    </section>
+
+    <!-- GANs -->
+    <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
+      <h3 class="text-2xl font-semibold mb-2">🤖 2. Réseaux adverses génératifs (GANs)</h3>
+      <img src="assets/images/placeholder-gan.jpg" alt="GAN Cartoonify" class="rounded mb-4">
+      <p class="text-stone-700">
+        Des modèles comme CartoonGAN, AnimeGANv2/v3 utilisent un générateur et un discriminateur. Résultat : des images stylisées rapides et expressives, parfaites pour les effets “manga” ou “Pixar”.
+      </p>
+    </section>
+
+    <!-- Diffusion -->
+    <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
+      <h3 class="text-2xl font-semibold mb-2">🌫️ 3. Modèles de diffusion</h3>
+      <img src="assets/images/placeholder-diffusion.jpg" alt="Modèles de diffusion" class="rounded mb-4">
+      <p class="text-stone-700">
+        Stable Diffusion, combiné à ControlNet, offre une flexibilité extrême avec des prompts textuels. Très créatif, mais parfois difficile à contrôler précisément sur les visages ou fresques complexes.
+      </p>
+    </section>
+
+    <!-- Stylisation de portraits -->
+    <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
+      <h3 class="text-2xl font-semibold mb-2">👤 4. Stylisation de portraits</h3>
+      <img src="assets/images/placeholder-portrait.jpg" alt="Stylisation de portraits" class="rounded mb-4">
+      <p class="text-stone-700">
+        Des modèles comme Toonify, StyleGAN-NADA ou VToonify sont conçus pour styliser les visages. Parfait pour les avatars ou caricatures, tout en respectant les proportions du visage original.
+      </p>
+    </section>
+
+    <!-- Résumé comparatif -->
+    <section class="bg-stone-200 p-6 rounded-lg shadow-inner border border-stone-300">
+      <h3 class="text-2xl font-semibold mb-4">📋 Résumé comparatif des approches</h3>
+      <ul class="list-disc pl-6 space-y-2 text-stone-700">
+        <li><strong>Transfert de style</strong> : précis, artistique, mais lent.</li>
+        <li><strong>GANs</strong> : rapides, résultats stylisés et populaires.</li>
+        <li><strong>Diffusion</strong> : contrôlable via texte, très créatif.</li>
+        <li><strong>Stylisation de portraits</strong> : idéal pour visages, avatars IA.</li>
+      </ul>
     </section>
   </main>
 
   <footer class="bg-stone-800 text-white p-6 text-center">
     © 2025 — Saint-Savin en IA
   </footer>
+
   <script src="js/animations.js"></script>
 </body>
 </html>
