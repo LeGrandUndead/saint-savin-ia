@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analyse – Saint-Savin en IA</title>
+  <title>Résultats – Saint-Savin en IA</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -15,52 +15,74 @@
       <nav class="space-x-4 text-lg">
         <a href="index.html" class="hover:underline">Accueil</a>
         <a href="theorie.html" class="hover:underline">Théorie</a>
-        <a href="outils.html" class="hover:underline">Plateformes</a>
-        <a href="galerie.html" class="hover:underline">Galerie</a>
+        <a href="outils.html" class="hover:underline">Outils</a>
+        <a href="galerie.html" class="hover:underline font-bold underline">Résultats</a>
         <a href="comparaison.html" class="hover:underline">Analyse</a>
-
       </nav>
     </div>
   </header>
 
-  <main class="flex-grow max-w-5xl mx-auto p-8">
-    <h2 class="text-4xl font-bold mb-6">Analyse comparative des résultats</h2>
+  <main class="flex-grow max-w-6xl mx-auto p-8">
+    <h2 class="text-4xl font-bold mb-8 fade-in">🖼️ Résultats de la cartoonification</h2>
+    <p class="text-lg text-stone-700 fade-in mb-6">Voici les rendus générés par différentes IA à partir de la fresque de Saint-Savin. Utilisez le menu pour explorer les différentes versions.</p>
 
-    <table class="w-full border-collapse table-auto text-left text-stone-700">
-      <thead>
-        <tr class="bg-stone-200">
-          <th class="p-3 border">Plateforme</th>
-          <th class="p-3 border">Fidélité</th>
-          <th class="p-3 border">Esthétique</th>
-          <th class="p-3 border">Limites</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="p-3 border">Cartoonify</td>
-          <td class="p-3 border">Moyenne</td>
-          <td class="p-3 border">Simpliste, lisible</td>
-          <td class="p-3 border">Peu de détails, effets "plats"</td>
-        </tr>
-        <tr class="bg-stone-100">
-          <td class="p-3 border">Toongineer</td>
-          <td class="p-3 border">Faible</td>
-          <td class="p-3 border">Vif et accrocheur</td>
-          <td class="p-3 border">Trop fantaisiste</td>
-        </tr>
-        <tr>
-          <td class="p-3 border">DeepArt</td>
-          <td class="p-3 border">Élevée</td>
-          <td class="p-3 border">Style pictural soigné</td>
-          <td class="p-3 border">Temps de calcul long</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Menu de filtrage -->
+    <div class="flex flex-wrap gap-4 mb-10 fade-in">
+      <button class="btn-anim bg-[#3e2a1e] text-white py-2 px-4 rounded" onclick="filterIA('all')">🎨 Tout afficher</button>
+      <button class="btn-anim bg-[#3e2a1e] text-white py-2 px-4 rounded" onclick="filterIA('cartoongan')">🧠 CartoonGAN</button>
+      <button class="btn-anim bg-[#3e2a1e] text-white py-2 px-4 rounded" onclick="filterIA('diffusion')">🌫️ Diffusion</button>
+      <button class="btn-anim bg-[#3e2a1e] text-white py-2 px-4 rounded" onclick="filterIA('toonify')">👤 Toonify</button>
+    </div>
+
+    <!-- Grille des résultats -->
+    <div id="results-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 fade-in">
+      <!-- Exemple de résultat -->
+      <div class="ia-card cartoongan bg-white rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+        <img src="assets/results/cartoongan.jpg" alt="Résultat CartoonGAN" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">CartoonGAN</h3>
+          <p class="text-sm text-stone-600">[À remplir] Ce modèle produit un style très graphique, avec des contours marqués et un aplat de couleurs vives.</p>
+        </div>
+      </div>
+
+      <div class="ia-card diffusion bg-white rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+        <img src="assets/results/diffusion.jpg" alt="Résultat Diffusion" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Stable Diffusion</h3>
+          <p class="text-sm text-stone-600">[À remplir] Le modèle diffusion offre une liberté créative importante, avec des textures riches et parfois surréalistes.</p>
+        </div>
+      </div>
+
+      <div class="ia-card toonify bg-white rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+        <img src="assets/results/toonify.jpg" alt="Résultat Toonify" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Toonify</h3>
+          <p class="text-sm text-stone-600">[À remplir] Spécialisé dans les visages, ce modèle conserve bien les traits tout en les stylisant.</p>
+        </div>
+      </div>
+
+      <!-- Tu peux dupliquer ce bloc pour chaque autre résultat / IA -->
+    </div>
   </main>
 
   <footer class="bg-stone-800 text-white p-6 text-center">
     © 2025 — Saint-Savin en IA
   </footer>
+
   <script src="js/animations.js"></script>
+
+  <!-- JS pour le filtre -->
+  <script>
+    function filterIA(type) {
+      const cards = document.querySelectorAll('.ia-card');
+      cards.forEach(card => {
+        if (type === 'all' || card.classList.contains(type)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -15,67 +15,80 @@
       <nav class="space-x-4 text-lg">
         <a href="index.html" class="hover:underline">Accueil</a>
         <a href="theorie.html" class="hover:underline">Théorie</a>
-        <a href="outils.html" class="hover:underline">Plateformes</a>
-        <a href="galerie.html" class="hover:underline">Galerie</a>
+        <a href="outils.html" class="hover:underline">Outils</a>
+        <a href="galerie.html" class="hover:underline">Résultats</a>
         <a href="comparaison.html" class="hover:underline">Analyse</a>
-        <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="flex-grow max-w-4xl mx-auto p-8 space-y-12 fade-in">
     <section>
-      <h2 class="text-4xl font-bold mb-4">Comment fonctionnent les IA de type Cartoonify ?</h2>
+      <h2 class="text-4xl font-bold mb-4">Comment fonctionne la Cartoonification par IA des fresques ?</h2>
       <p class="text-lg text-stone-700">
-        L’effet "cartoonify" désigne la transformation d’une photo réaliste en un rendu stylisé proche d’un dessin animé ou d’une illustration. En IA, plusieurs approches ont été développées pour automatiser cette transformation.
+        La <strong>cartoonification</strong> est un processus par lequel une image réaliste, comme une fresque ou une photo, est transformée en une illustration stylisée, souvent proche d’un dessin animé. Dans le cadre de la transformation de fresques, l’objectif est de conserver l’expression et la richesse visuelle de l’œuvre tout en simplifiant les formes et en accentuant certains traits caractéristiques, comme les <strong>contours</strong>  et les <strong>couleurs</strong> . Ce processus vise à rendre les fresques plus accessibles visuellement et à créer un effet artistique unique, qui peut être très utile dans des projets de conservation ou de présentation numérique des œuvres.
+        <br><br>
       </p>
+      
+      <p class="text-lg text-stone-700">
+        Sur le plan technique, la cartoonification par IA analyse d’abord la structure de l’image. En particulier, elle repère les <strong>bords</strong> et les <strong>formes principales</strong> de la fresque, avant d’appliquer des algorithmes pour simplifier les textures, lisser les couleurs et accentuer les détails importants, tout en créant un rendu de type cartoon. Cette approche permet de simplifier l’image tout en préservant l’essence et l'identité visuelle de l'œuvre.
+        <br><br>
+      </p>
+      
+      <p class="text-lg text-stone-700">
+        Ce qui rend la cartoonification par IA particulièrement intéressante dans le contexte des fresques, c'est la possibilité de créer une <strong>interprétation artistique</strong> tout en maintenant la structure de l’œuvre originale. Ce processus est extrêmement utile pour la <strong>conservation numérique</strong> ou pour la diffusion des fresques de manière plus accessible et engageante pour un large public.
+        <br><br>
+      </p>
+
+      <p class="text-lg text-stone-700">
+        En résumé, la cartoonification avec IA consiste à transformer une image complexe en une version simplifiée et stylisée, tout en préservant les éléments visuels essentiels et en créant une version de l’œuvre qui reste fidèle tout en étant plus graphique et expressivement forte.
+        <br><br>
+      </p>
+
+      <p class="text-lg text-stone-700">
+        Pour automatiser ce processus de transformation en style cartoon, plusieurs approches en intelligence artificielle ont été développées. Chaque méthode repose sur des modèles spécifiques, avec leurs avantages et limites, mais toutes visent à simplifier les traits, accentuer les formes et styliser l’image de manière cohérente. Nous allons explorer les principales familles de modèles IA utilisées aujourd’hui pour la cartoonification d’images – des générateurs adverses aux modèles de diffusion, en passant par ceux spécialisés dans les portraits.
+      </p>
+      
     </section>
 
-    <!-- Transfert de style -->
     <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
-      <h3 class="text-2xl font-semibold mb-2">🎨 1. Transfert de style</h3>
-      <img src="assets/logos/VGG19.png" alt="Transfert de style" class="rounded mb-4">
+      <h3 class="text-2xl font-semibold mb-2">🤖 1. Réseaux adverses génératifs (GANs) pour la Cartoonification</h3>
+      <img src="assets/images/animegan.jpg" alt="GAN Cartoonify" class="rounded mb-4">
       <p class="text-stone-700">
-        Le transfert de style conserve le contenu d’une image tout en lui appliquant l’esthétique d’un dessin animé. Il utilise des réseaux comme VGG19 pour fusionner contenu et texture. Précis mais lent, idéal pour les images fixes.
+        Les <strong>réseaux adverses génératifs (GANs)</strong> sont des modèles d’intelligence artificielle composés de deux réseaux : un générateur et un discriminateur. Le générateur apprend à transformer des images en style cartoon, tandis que le discriminateur évalue la qualité de l’image générée. Ces modèles sont particulièrement efficaces pour créer des rendus visuels stylisés de fresques, en capturant les contours et les couleurs caractéristiques du style cartoon.
+      </p>
+      
+      <p class="text-stone-700">
+        Des architectures comme <strong>CartoonGAN</strong> et <strong>AnimeGAN</strong> sont spécialement conçues pour travailler avec des images de type « dessin animé ». Elles peuvent appliquer une stylisation cartoon sur des fresques tout en conservant l’intégrité de l’œuvre. Ces IA sont capables de générer des images rapidement, ce qui les rend idéales pour des applications en temps réel, tout en étant très adaptées à des projets artistiques numériques.
       </p>
     </section>
 
-    <!-- GANs -->
     <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
-      <h3 class="text-2xl font-semibold mb-2">🤖 2. Réseaux adverses génératifs (GANs)</h3>
-      <img src="assets/logos/AGN.png" alt="GAN Cartoonify" class="rounded mb-4">
+      <h3 class="text-2xl font-semibold mb-2">🌫️ 2. Modèles de diffusion pour des Cartoonifications créatives</h3>
+      <img src="assets/images/foursunday.jpg" alt="Modèles de diffusion" class="rounded mb-4">
       <p class="text-stone-700">
-        Des modèles comme CartoonGAN, AnimeGANv2/v3 utilisent un générateur et un discriminateur. Résultat : des images stylisées rapides et expressives, parfaites pour les effets “manga” ou “Pixar”.
+        Les <strong>modèles de diffusion</strong>, comme <strong>Stable Diffusion</strong>, sont utilisés pour générer des images stylisées à partir d’une version bruitée de l’image originale. Ce processus de débruitage peut être guidé par des <strong>prompts textuels</strong> tels que "style cartoon" pour donner une direction créative à l’image. Les modèles de diffusion offrent un grand potentiel pour styliser des fresques de manière très originale, permettant de créer des interprétations visuelles nouvelles tout en conservant une certaine cohérence avec l'image d'origine.
+      </p>
+      
+      <p class="text-stone-700">
+        Ces modèles sont très flexibles et puissants pour créer des rendus riches et créatifs, mais peuvent parfois offrir moins de contrôle sur la fidélité de l’image par rapport aux méthodes plus directes comme les GANs.
+      </p>
+
+      <p class="text-stone-700">
+        Il est important de noter que ces modèles sont surtout utilisés pour la cartoonification de visages et n'est pas optimal pour des fresques détaillées. Ceci-dit il est quand même util d'en savoir son fontionnement. 
       </p>
     </section>
 
-    <!-- Diffusion -->
     <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
-      <h3 class="text-2xl font-semibold mb-2">🌫️ 3. Modèles de diffusion</h3>
-      <img src="assets/logos/diffusion.png" alt="Modèles de diffusion" class="rounded mb-4">
+      <h3 class="text-2xl font-semibold mb-2">👤 3. Stylisation de portraits pour une Cartoonification précise</h3>
+      <img src="assets/images/hq720.jpg" alt="Stylisation de portraits" class="rounded mb-4">
       <p class="text-stone-700">
-        Stable Diffusion, combiné à ControlNet, offre une flexibilité extrême avec des prompts textuels. Très créatif, mais parfois difficile à contrôler précisément sur les visages ou fresques complexes.
+        La stylisation de portraits est un domaine où l’IA est particulièrement performante. Des modèles comme <strong>Toonify</strong> et <strong>VToonify</strong> utilisent des <strong>espaces latents</strong> pour encoder et manipuler les traits du visage. Bien que ces modèles soient optimisés pour les portraits humains, leur approche peut également être adaptée pour styliser les éléments de personnages ou figures présentes dans des fresques, en appliquant des traits caricaturaux tout en préservant l'identité visuelle.
       </p>
-    </section>
-
-    <!-- Stylisation de portraits -->
-    <section class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
-      <h3 class="text-2xl font-semibold mb-2">👤 4. Stylisation de portraits</h3>
-      <img src="assets/logos/Vtoonify.jpg" alt="Stylisation de portraits" class="rounded mb-4">
+      
       <p class="text-stone-700">
-        Des modèles comme Toonify, StyleGAN-NADA ou VToonify sont conçus pour styliser les visages. Parfait pour les avatars ou caricatures, tout en respectant les proportions du visage original.
+        Cette approche permet de maintenir une forte <strong>cohérence visuelle</strong>, ce qui est particulièrement important pour les fresques représentant des personnages ou des scènes humaines. Les fresques peuvent ainsi être transformées en œuvres visuellement simplifiées mais encore reconnaissables.
       </p>
-    </section>
-
-    <!-- Résumé comparatif -->
-    <section class="bg-stone-200 p-6 rounded-lg shadow-inner border border-stone-300">
-      <h3 class="text-2xl font-semibold mb-4">📋 Résumé comparatif des approches</h3>
-      <ul class="list-disc pl-6 space-y-2 text-stone-700">
-        <li><strong>Transfert de style</strong> : précis, artistique, mais lent.</li>
-        <li><strong>GANs</strong> : rapides, résultats stylisés et populaires.</li>
-        <li><strong>Diffusion</strong> : contrôlable via texte, très créatif.</li>
-        <li><strong>Stylisation de portraits</strong> : idéal pour visages, avatars IA.</li>
-      </ul>
     </section>
   </main>
 
